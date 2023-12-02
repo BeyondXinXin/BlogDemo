@@ -1,0 +1,17 @@
+﻿macro(GENERATE_PROGECT PROGECT_NAME)
+    project(${PROGECT_NAME})
+    file(GLOB_RECURSE SOURCES "*.cpp" "*.cxx" "*.cc")
+    file(GLOB_RECURSE HEADERS "*.h")
+    file(GLOB_RECURSE RESOURCES "*.qrc")
+    file(GLOB_RECURSE FORMS *.ui)
+    source_group("" FILES ${HEADERS} ${SOURCES})
+    set(${PROGECT_NAME}_SRCS ${SOURCES} ${HEADERS} ${RESOURCES} ${FORMS})
+    set(${PROGECT_NAME}_SOURCE_DIR ${PROJECT_SOURCE_DIR}
+        CACHE INTERNAL "${PROGECT_NAME}_SOURCE_DIR")
+
+    set(${PROGECT_NAME}_RESOURCES ${RESOURCES}
+        CACHE PATH "${PROGECT_NAME}_RESOURCES")
+endmacro()
+
+
+
