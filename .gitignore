@@ -1,0 +1,5 @@
+.vs
+bin
+out
+CMakePresets.json
+CMakeUserPresets.json
