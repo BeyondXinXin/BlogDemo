@@ -1,10 +1,9 @@
-/* p,
-li,
-h1 {
-    color: red;
-    width: 500px;
-    border: 1px solid black;
-} */
+/* 
+外联样式
+标签选择器
+类型选择器
+id选择器
+*/
 
 html {
     font-size: 10px;
