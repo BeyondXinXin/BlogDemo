@@ -1,0 +1,16 @@
+# Binaries
+build
+
+# Qt Creator files
+*.user*
+*.autosave
+
+# Neovim
+neovim.json
+
+# VSCode
+.vscode
+
+# Clangd
+.cache
+compile_commands.json

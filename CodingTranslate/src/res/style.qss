@@ -1,0 +1,142 @@
+/*paletteColor:#293742*/
+
+
+
+/*---------------------------------------------------------------------------*/
+/*  QLineEdit  */
+
+QLineEdit{
+background:transparent;
+border:0px solid transparent;
+font-size:18px;
+color:#FFFFFF;
+selection-background-color:#00BB9E;
+selection-color:#FFFFFF;
+}
+
+/*QLineEdit:focus
+QLineEdit:hover{
+border:1px solid #000000;
+}*/
+
+
+/*---------------------------------------------------------------------------*/
+/*  QTextEdit  */
+
+QTextEdit{
+background:#30404d;
+border:1px solid #182127;
+border-radius:3px;
+padding:2px;
+font-size:18px;
+color:#FFFFFF;
+selection-background-color:#00BB9E;
+selection-color:#FFFFFF;
+}
+
+QTextEdit:focus
+QTextEdit:hover{
+border:1px solid #000000;
+}
+
+
+/*---------------------------------------------------------------------------*/
+/*  QPlainTextEdit  */
+
+QPlainTextEdit{
+background:#222d36;
+border:1px solid #182127;
+border-radius:3px;
+padding:2px;
+font-size:18px;
+color:#FFFFFF;
+selection-background-color:#00BB9E;
+selection-color:#FFFFFF;
+}
+
+QPlainTextEdit:focus,
+QPlainTextEdit:hover{
+border:1px solid #000000;
+}
+
+
+/*---------------------------------------------------------------------------*/
+/* QToolBar  */
+
+QToolBar{
+border-left: 10px solid transparent;
+border-right: 10px solid transparent;
+border-top: 0px solid transparent;
+border-bottom: 0px solid solid #1f2a32;
+spacing: 10px;
+}
+
+QToolBar::separator{
+background-color: #1f2a32;
+width: 1px;
+height: 4px;
+}
+
+QToolBar>QToolButton{
+background:transparent;
+border: 0px solid transparent;
+}
+
+QToolBar>QToolButton::hover{
+background-color: #1f2a32;
+}
+
+/*---------------------------------------------------------------------------*/
+/*  QToolButton  */
+
+QToolButton{
+background:rgba(85, 93, 97, 1);
+}
+
+QToolButton:hover{
+background:qlineargradient(
+spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #262829,stop:1 #262829);
+}
+
+QToolButton:pressed{
+background:qlineargradient(
+spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #404244,stop:1 #404244);
+}
+
+QToolButton::menu-indicator{
+image:None;
+}
+
+/*---------------------------------------------------------------------------*/
+/*  QPushButton  */
+
+QPushButton{
+background:rgba(85, 93, 97, 1);
+}
+
+QPushButton:hover{
+background:qlineargradient(
+spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #262829,stop:1 #262829);
+}
+
+QPushButton:pressed{
+background:qlineargradient(
+spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #404244,stop:1 #404244);
+}
+
+QPushButton::menu-indicator{
+image:None;
+}
+
+
+/*---------------------------------------------------------------------------*/
+/*  QToolTip  œ‘ æÃ· æ  */
+
+QToolTip{
+border:0px solid #BEC0C2;
+padding:1px;
+color:#BEC0C2;
+background:qlineargradient(
+spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #404244,stop:1 #404244);
+}
+
