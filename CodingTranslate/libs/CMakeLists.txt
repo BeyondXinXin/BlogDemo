@@ -1,0 +1,3 @@
+add_subdirectory(qonlinetranslator)
+add_subdirectory(singleapplication)
+add_subdirectory(qhotkey)

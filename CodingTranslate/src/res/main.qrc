@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>style.qss</file>
+        <file>img/close.svg</file>
+        <file>img/refresh.svg</file>
+        <file>img/settings.svg</file>
+        <file>pingfang.ttf</file>
+        <file>img/audio.svg</file>
+        <file>img/copy.svg</file>
+        <file>img/xml.svg</file>
+    </qresource>
+</RCC>
