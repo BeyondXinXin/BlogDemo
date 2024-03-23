@@ -1,0 +1,125 @@
+/* 主窗口背景色 */
+QWidget{
+    font-size: 18px;
+    font-family: "Microsoft Yahei";
+    background-color: rgb(24, 26, 27);
+}
+
+/* 主窗口和子窗口背景色 */
+QWidget#MainWindow, QWidget#main_wid{
+    background-color: rgb(32, 35, 37);
+}
+
+/* 输入框样式 */
+QLineEdit{
+    background: #2E2F30;
+    border: 1px solid #67696B;
+    border-radius: 3px;
+    padding: 2px;
+    selection-background-color: #00BB9E;
+    selection-color: #FFFFFF;
+}
+
+/* 文本编辑框样式 */
+QTextEdit, QPlainTextEdit{
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+    selection-background-color: #00BB9E;
+    selection-color: #FFFFFF;
+    font-size: 18px;
+    color: rgba(149, 162, 171, 1);
+    background: transparent;
+}
+
+/* 按钮样式 */
+QPushButton{
+    text-align: center;
+    font-size: 12px;
+}
+
+/* 按钮 - 透明蓝色 */
+QPushButton[CustomStyle="transparent_blue"]{
+    background-color: transparent;
+    border: 1px solid rgba(39, 141, 255, 1);
+    color: rgba(39, 141, 255, 1);
+}
+
+QPushButton:hover[CustomStyle="transparent_blue"]{
+    background-color: rgba(39, 141, 255, 1);
+    border: 1px solid #2ca6e0;
+    color: rgba(255, 255, 255, 1);
+}
+
+/* 滑动条样式 */
+QSlider::groove:horizontal{
+    background: #404244;
+    height: 8px;
+}
+
+QSlider::add-page:horizontal{
+    background: #404244;
+    height: 8px;
+}
+
+QSlider::sub-page:horizontal{
+    background: #67696B;
+    height: 8px;
+}
+
+QSlider::handle:horizontal{
+    width: 26px;
+    margin-bottom: -8px;
+    background: url(:/new_resources/png/other/handle.png);
+}
+
+/* 表格样式 */
+QTableView{
+    font-size: 18px;
+    color: #C3C2C2;
+    gridline-color: #1A1A1A;
+    background-color: #363636;
+    alternate-background-color: #2F302F;
+    selection-color: #FFFFFF;
+    selection-background-color: #2CA6E0;
+    border: 0px;
+    border-radius: 0px;
+    text-align: center;
+}
+
+/* 表头样式 */
+QHeaderView::section {
+    background-color: #1A1A1A;
+    color: #CCCCCC;
+    min-height: 40px;
+    text-align: center;
+}
+
+QHeaderView {
+    font-size: 18px;
+    color: #C3C2C2;
+    background-color: #1A1A1A;
+    border: 0px;
+    border-radius: 0px;
+    min-height: 50px;
+    text-align: center;
+}
+
+/* 标签栏样式 */
+QTabBar::tab {
+    font-size: 14px;
+    background: rgba(33, 36, 38, 255);
+    border: 1px solid rgba(47, 51, 54, 255);
+    color: rgba(80, 87, 92, 1);
+    width: 100px;
+    height: 30px;
+}
+
+QTabBar::tab:hover {
+    background: rgba(37, 41, 43, 255);
+}
+
+QTabBar::tab:selected {
+    color: rgba(184, 200, 212, 1);
+    background: rgba(37, 41, 43, 255);
+}
