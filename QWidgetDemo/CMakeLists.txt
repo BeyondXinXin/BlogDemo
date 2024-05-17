@@ -8,9 +8,6 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 11)
 set(BUILD_SHARED_LIBS ON)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${PROJECT_SOURCE_DIR}/bin/Release)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/bin/Debug)
-
 find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Concurrent)
 find_package(Qt5LinguistTools)
 
@@ -34,3 +31,4 @@ endmacro()
 
 GENERATE_PROJECT(DisappearLabel)
 GENERATE_PROJECT(DoubleSlider)
+GENERATE_PROJECT(BullsEye)
