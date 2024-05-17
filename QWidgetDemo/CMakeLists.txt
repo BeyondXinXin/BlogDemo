@@ -33,3 +33,4 @@ macro(GENERATE_PROJECT PROJECT_NAME)
 endmacro()
 
 GENERATE_PROJECT(DisappearLabel)
+GENERATE_PROJECT(DoubleSlider)
