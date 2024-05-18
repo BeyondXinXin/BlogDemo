@@ -12,6 +12,7 @@
 |  BullsEye  |  绘制牛眼图                |
 |  DisappearLabel  | 渐变消失标签       |
 |  DoubleSlider  |  双滑块                |
+|  PictureBlockSelection  |  多边形选择                |
 
 ## ITK
 
