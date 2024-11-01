@@ -24,6 +24,7 @@
 |  DisappearLabel  | 渐变消失标签       |
 |  DoubleSlider  |  双滑块                |
 |  PictureBlockSelection  |  多边形选择                |
+|  PouringDucks  |  倒鸭子文字转动态视频                |
 
 ### Vtk
 
