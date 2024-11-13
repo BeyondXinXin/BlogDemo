@@ -3,3 +3,4 @@ bin
 out
 CMakePresets.json
 CMakeUserPresets.json
+/QWidgetDemo/CMakeLists.txt.user

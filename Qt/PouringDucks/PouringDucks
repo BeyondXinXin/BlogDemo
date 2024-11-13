@@ -1,0 +1,3 @@
+#include "src/SubtitleAnimatorWidget.h"
+#include "src/WindowScreenRecorder.h"
+#include "src/Subtitle.h"
