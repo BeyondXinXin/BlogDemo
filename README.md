@@ -25,6 +25,8 @@
 |  DoubleSlider  |  双滑块                |
 |  PictureBlockSelection  |  多边形选择                |
 |  PouringDucks  |  倒鸭子文字转动态视频                |
+|  SonicRhythm  |  音频可视化                |
+|  YiHangService  |  c++服务端                |
 
 ### Vtk
 
