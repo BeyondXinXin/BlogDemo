@@ -3,12 +3,13 @@
 # 添加所有文件
 git add .
 
-# 获取当前日期和时间
+# 获取当前日期和星期
 mydate=$(date +"%Y-%m-%d")
+weekday=$(date +"%A")
 mytime=$(date +"%H:%M")
 
 # 提交更改
-git commit -m "$mydate $mytime"
+git commit -m "$mydate $weekday $mytime"
 
 # 推送到远程仓库
 git push
