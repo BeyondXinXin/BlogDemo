@@ -1,0 +1,10 @@
+/out
+/CMakePresets.json
+/CMakeUserPresets.json
+/.vs
+/build
+/CMakeLists.txt.user
+/bin
+/CMakeSettings.json
+/3rd/include/cmark
+/src/*.aps
