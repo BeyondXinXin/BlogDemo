@@ -1,0 +1,20 @@
+﻿cmake_minimum_required(VERSION 3.12.0)
+project(SonicRhythm VERSION "0.1")
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_CXX_STANDARD 17)
+set(BUILD_SHARED_LIBS "" ON)
+
+set(BINDIR bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${LIBDIR})
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${LIBDIR})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${BINDIR})
+
+find_package(Qt6 REQUIRED COMPONENTS Charts Core Gui Multimedia)
+add_subdirectory(3rdparty/kissfft)
+add_subdirectory(src)
+
+

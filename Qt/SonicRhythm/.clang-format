@@ -1,0 +1,43 @@
+AccessModifierOffset: -4
+AlignAfterOpenBracket: true
+AllowShortFunctionsOnASingleLine: false
+AlwaysBreakTemplateDeclarations: true
+BasedOnStyle: WebKit
+BreakBeforeBinaryOperators: NonAssignment
+BreakBeforeBraces: Custom
+BreakConstructorInitializersBeforeComma: false
+BreakConstructorInitializers: BeforeComma
+ColumnLimit: 0
+CommentPragmas: "^!|^:"
+CompactNamespaces: false
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
+ConstructorInitializerIndentWidth: 2
+ContinuationIndentWidth: 2
+FixNamespaceComments: true
+ForEachMacros: [ foreach, Q_FOREACH, BOOST_FOREACH, forever, Q_FOREVER, QBENCHMARK, QBENCHMARK_ONCE ]
+IndentWidth: 4
+NamespaceIndentation: None
+PointerAlignment: Middle
+PointerBindsToType: false
+SortIncludes: false
+SpaceAfterTemplateKeyword: false
+Standard: Cpp11
+AlwaysBreakAfterReturnType: None
+AllowShortIfStatementsOnASingleLine: false
+IndentWrappedFunctionNames: true
+InsertBraces: true
+BraceWrapping:
+    AfterClass: true
+    AfterControlStatement: false
+    AfterEnum: true
+    AfterFunction: true
+    AfterNamespace: false
+    AfterObjCDeclaration: false
+    AfterStruct: true
+    AfterUnion: false
+    BeforeCatch: false
+    BeforeElse: false
+    IndentBraces: false
+    SplitEmptyFunction: false
+    SplitEmptyRecord: false
+    SplitEmptyNamespace: false
