@@ -4,3 +4,5 @@ out
 CMakePresets.json
 CMakeUserPresets.json
 /QWidgetDemo/CMakeLists.txt.user
+/*.bat
+/*.sh
