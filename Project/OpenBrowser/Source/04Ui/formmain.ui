@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormMain</class>
+ <widget class="QWidget" name="FormMain">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>680</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="FormLeft" name="left_form" native="true"/>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="main_stacked_widget">
+     <property name="currentIndex">
+      <number>3</number>
+     </property>
+     <property name="background_color" stdset="0">
+      <string>2</string>
+     </property>
+     <property name="border_no" stdset="0">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="mainwindow0">
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QOpencvWidget" name="image_window" native="true"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QVTKOpenGLWidget" name="mainwindow1">
+      <layout class="QGridLayout" name="modle_layout"/>
+     </widget>
+     <widget class="QWidget" name="mainwindow2">
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="1">
+          <widget class="QVTKOpenGLWidget" name="view2" native="true">
+           <widget class="QPushButton" name="big_view2">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>40</width>
+              <height>27</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QVTKOpenGLWidget" name="view4" native="true">
+           <widget class="QPushButton" name="big_view4">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>40</width>
+              <height>27</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QVTKOpenGLWidget" name="view1" native="true">
+           <widget class="QPushButton" name="big_view1">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>40</width>
+              <height>27</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QVTKOpenGLWidget" name="view3" native="true">
+           <widget class="QPushButton" name="big_view3">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>40</width>
+              <height>27</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="mainwindow3">
+      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,1">
+       <item>
+        <layout class="QVBoxLayout" name="images_layout1"/>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="images_layout2"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="home">
+      <property name="CustomStyle" stdset="0">
+       <string>home</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKOpenGLWidget</class>
+   <extends>QWidget</extends>
+   <header>QVTKOpenGLWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FormLeft</class>
+   <extends>QWidget</extends>
+   <header>formleft.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QOpencvWidget</class>
+   <extends>QWidget</extends>
+   <header>qopencvwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

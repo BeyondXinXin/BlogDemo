@@ -1,0 +1,11 @@
+
+bin/
+
+bulid/
+
+CMakeLists.txt.user
+
+\.vscode/
+
+build/
+/CMakeLists.txt.user

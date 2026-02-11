@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Image/btn-4-1.png</file>
+        <file>Image/btn-4-2.png</file>
+        <file>Image/btn-6-1.png</file>
+        <file>Image/btn-6-2.png</file>
+        <file>Image/btn-8-1.png</file>
+        <file>Image/btn-8-2.png</file>
+        <file>Image/btn-9-1.png</file>
+        <file>Image/btn-9-2.png</file>
+        <file>Image/btn-16-1.png</file>
+        <file>Image/btn-16-2.png</file>
+        <file>Image/btndo2.png</file>
+        <file>Image/Close.png</file>
+        <file>Image/Edit_Full.png</file>
+        <file>Image/Edit_Max.png</file>
+        <file>Image/logo.ico</file>
+        <file>Image/logo01.png</file>
+        <file>Image/New.png</file>
+        <file>Image/Open.png</file>
+        <file>Image/Save.png</file>
+        <file>Image/SaveAs.png</file>
+        <file>Image/btn_close.png</file>
+        <file>Image/btn_ok.png</file>
+        <file>Image/fontawesome-webfont.ttf</file>
+        <file>Image/Help_Info.png</file>
+        <file>Image/msg_error.png</file>
+        <file>Image/msg_info.png</file>
+        <file>Image/msg_question.png</file>
+        <file>Image/qt_zh_CN.qm</file>
+        <file>Image/openBrowser.png</file>
+    </qresource>
+</RCC>

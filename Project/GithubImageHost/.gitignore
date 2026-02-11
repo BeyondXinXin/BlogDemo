@@ -1,4 +1,7 @@
-/out
-/CMakePresets.json
-/CMakeUserPresets.json
+/bin
+/3rdparty/include
+/*.user
+/build
 /.vs
+/out
+/CMakeSettings.json

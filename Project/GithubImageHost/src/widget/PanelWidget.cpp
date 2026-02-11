@@ -1,148 +1,162 @@
-﻿#include "PanelWidget.h"
+﻿#include "panelwidget.h"
 
 #include <QBoxLayout>
 #include <QFrame>
 #include <QPainter>
 #include <QScrollArea>
 
-PanelWidget::PanelWidget(QWidget* parent)
-	: QWidget(parent),
-	m_ScrollArea(new QScrollArea(this)),
-	m_ScrollAreaWidgetContents(new QWidget()),
-	m_VerticalLayout(new QVBoxLayout(m_ScrollAreaWidgetContents)),
-	m_Frame(new QFrame(m_ScrollAreaWidgetContents)),
-	m_GridLayout(new QGridLayout(m_Frame)),
-	m_Margin(0),
-	m_Space(0),
-	m_AutoWidth(false),
-	m_AutoHeight(false)
+PanelWidget::PanelWidget(QWidget *parent)
+  : QWidget(parent)
 {
-	m_ScrollArea->setObjectName("scrollAreaMain");
-	m_ScrollArea->setWidgetResizable(true);
-	m_ScrollAreaWidgetContents->setGeometry(QRect(0, 0, 100, 100));
-	m_Frame->setObjectName("frameMain");
-	m_GridLayout->setSpacing(0);
+    scroll_area_ = new QScrollArea(this);
+    scroll_area_->setObjectName("scrollAreaMain");
+    scroll_area_->setWidgetResizable(true);
 
-	m_VerticalLayout->addWidget(m_Frame);
-	m_ScrollArea->setWidget(m_ScrollAreaWidgetContents);
-	m_ScrollArea->setStyleSheet("QScrollArea#scrollAreaMain,QFrame#frameMain{border:none;}");
+    scroll_area_widget_contents_ = new QWidget();
+    scroll_area_widget_contents_->setGeometry(QRect(0, 0, 100, 100));
+
+    vertical_layout_ = new QVBoxLayout(scroll_area_widget_contents_);
+    vertical_layout_->setSpacing(0);
+    vertical_layout_->setContentsMargins(0, 0, 0, 0);
+
+    frame_ = new QFrame(scroll_area_widget_contents_);
+    frame_->setObjectName("frameMain");
+
+    grid_layout_ = new QGridLayout(frame_);
+    grid_layout_->setSpacing(0);
+
+    vertical_layout_->addWidget(frame_);
+    scroll_area_->setWidget(scroll_area_widget_contents_);
+    scroll_area_->setStyleSheet("QScrollArea#scrollAreaMain,QFrame#frameMain{border:none;}");
+
+    margin_ = 0;
+    space_ = 0;
+    auto_width_ = false;
+    auto_height_ = false;
 }
 
-void PanelWidget::resizeEvent(QResizeEvent*)
+void PanelWidget::resizeEvent(QResizeEvent *)
 {
-	m_ScrollArea->move(1, 1);
-	m_ScrollArea->resize(this->size() - QSize(2, 2));
+    scroll_area_->move(1, 1);
+    scroll_area_->resize(this->size() - QSize(2, 2));
 }
 
-void PanelWidget::paintEvent(QPaintEvent* e)
+void PanelWidget::paintEvent(QPaintEvent *e)
 {
-	QWidget::paintEvent(e);
-	QPainter painter(this);
-	painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
-	painter.setPen(QColor(39, 141, 255));
-	painter.drawRect(1, 1, width() - 2, height() - 2);
+    QWidget::paintEvent(e);
+    QPainter painter(this);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
+    painter.setPen(QColor(39, 141, 255));
+    painter.drawRect(1, 1, width() - 2, height() - 2);
 }
 
 QSize PanelWidget::sizeHint() const
 {
-	return QSize(300, 200);
+    return QSize(300, 200);
 }
 
 QSize PanelWidget::minimumSizeHint() const
 {
-	return QSize(20, 20);
+    return QSize(20, 20);
 }
 
 int PanelWidget::GetMargin() const
 {
-	return m_Margin;
+    return this->margin_;
 }
 
 int PanelWidget::GetSpace() const
 {
-	return m_Space;
+    return this->space_;
 }
 
 bool PanelWidget::GetAutoWidth() const
 {
-	return m_AutoWidth;
+    return this->auto_width_;
 }
 
 bool PanelWidget::GetAutoHeight() const
 {
-	return m_AutoHeight;
+    return this->auto_height_;
 }
 
-QList<QWidget*> PanelWidget::GetWidgets()
+QList<QWidget *> PanelWidget::GetWidgets()
 {
-	return m_Widgets;
+    return this->widgets_;
 }
 
 int PanelWidget::GetColumnCount()
 {
-	return m_ColumnCount;
+    return this->column_count_;
 }
 
-void PanelWidget::SetWidget(QList<QWidget*> widgets, int columnCount)
+void PanelWidget::SetWidget(QList<QWidget *> widgets, int columnCount)
 {
-	m_Widgets = widgets;
-	m_ColumnCount = columnCount;
-	qDeleteAll(m_Frame->findChildren<QWidget*>());
+    this->widgets_ = widgets;
+    this->column_count_ = columnCount;
 
-	int row = 0;
-	int column = 0;
+    //先清空原有所有元素
+    qDeleteAll(frame_->findChildren<QWidget *>());
 
-	for (QWidget* widget : widgets) {
-		m_GridLayout->addWidget(widget, row, column);
-		column++;
-		if (column % columnCount == 0) {
-			row++;
-			column = 0;
-		}
-	}
+    int row = 0;
+    int column = 0;
+    int index = 0;
 
-	row++;
+    foreach (QWidget *widget, widgets) {
+        grid_layout_->addWidget(widget, row, column);
+        column++;
+        index++;
 
-	if (!m_AutoWidth) {
-		QSpacerItem* hSpacer = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
-		m_GridLayout->addItem(hSpacer, 0, m_GridLayout->columnCount());
-	}
+        if (index % columnCount == 0) {
+            row++;
+            column = 0;
+        }
+    }
 
-	if (!m_AutoHeight) {
-		QSpacerItem* vSpacer = new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding);
-		m_GridLayout->addItem(vSpacer, row, 0);
-	}
+    row++;
+
+    //设置右边弹簧
+    if (!auto_width_) {
+        QSpacerItem *hSpacer = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        grid_layout_->addItem(hSpacer, 0, grid_layout_->columnCount());
+    }
+
+    //设置底边弹簧
+    if (!auto_height_) {
+        QSpacerItem *vSpacer = new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        grid_layout_->addItem(vSpacer, row, 0);
+    }
 }
 
 void PanelWidget::SetMargin(int left, int top, int right, int bottom)
 {
-	m_GridLayout->setContentsMargins(left, top, right, bottom);
+    grid_layout_->setContentsMargins(left, top, right, bottom);
 }
 
 void PanelWidget::SetMargin(int margin)
 {
-	if (m_Margin != margin) {
-		SetMargin(margin, margin, margin, margin);
-	}
+    if (this->margin_ != margin) {
+        SetMargin(margin, margin, margin, margin);
+    }
 }
 
 void PanelWidget::SetSpace(int space)
 {
-	if (m_Space != space) {
-		m_GridLayout->setSpacing(space);
-	}
+    if (this->space_ != space) {
+        grid_layout_->setSpacing(space);
+    }
 }
 
 void PanelWidget::SetAutoWidth(bool autoWidth)
 {
-	if (m_AutoWidth != autoWidth) {
-		m_AutoWidth = autoWidth;
-	}
+    if (this->auto_width_ != autoWidth) {
+        this->auto_width_ = autoWidth;
+    }
 }
 
 void PanelWidget::SetAutoHeight(bool autoHeight)
 {
-	if (m_AutoHeight != autoHeight) {
-		m_AutoHeight = autoHeight;
-	}
+    if (this->auto_height_ != autoHeight) {
+        this->auto_height_ = autoHeight;
+    }
 }

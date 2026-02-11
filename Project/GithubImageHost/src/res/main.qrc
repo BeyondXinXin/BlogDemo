@@ -36,6 +36,5 @@
         <file>StyleResources/scrollbarright02.png</file>
         <file>StyleResources/scrollbarup01.png</file>
         <file>StyleResources/scrollbarup02.png</file>
-        <file>PicxStyle.qss</file>
     </qresource>
 </RCC>

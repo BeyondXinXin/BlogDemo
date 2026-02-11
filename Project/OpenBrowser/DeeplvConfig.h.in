@@ -1,0 +1,11 @@
+#ifndef INCLUDE_GUARD
+#define INCLUDE_GUARD
+
+#define OpenBrowser_NAME "OpenBrowser"
+#define OpenBrowser_VER  "@OpenBrowser_VERSION@"
+#define OpenBrowser_YEARS "2020"
+#define OpenBrowser_VER_MAJOR "@OpenBrowser_VERSION_MAJOR@"
+#define OpenBrowser_VER_MINOR "@OpenBrowser_VERSION_MINOR@"
+#define OpenBrowser_VER_PATCH "@OpenBrowser_VERSION_PATCH@"
+
+#endif // INCLUDE_GUARD
