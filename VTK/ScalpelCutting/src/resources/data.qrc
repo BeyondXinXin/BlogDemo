@@ -1,0 +1,6 @@
+﻿<RCC>
+    <qresource prefix="/">
+        <file>shader/volume_cut.comp</file>
+    </qresource>
+</RCC>
+

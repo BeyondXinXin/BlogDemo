@@ -1,0 +1,69 @@
+﻿#version 430 core
+
+layout(local_size_x = 16, local_size_y = 8, local_size_z = 4) in;
+
+layout(std430, binding = 0) buffer VolumeBuffer
+{
+    int data[];
+}
+uVolume;
+
+layout(binding = 0) uniform sampler2D uMask;
+
+uniform mat4 uMVP;
+uniform ivec3 uDims;
+uniform vec3 uOrigin;
+uniform vec3 uSpacing;
+uniform int uCutInside;
+uniform int uAirValue;
+uniform vec4 uClipPlanes[6];
+
+void main()
+{
+    ivec3 gid = ivec3(gl_GlobalInvocationID);
+    if (any(greaterThanEqual(gid, uDims))) {
+        return;
+    }
+
+    int voxelIndex = gid.z * uDims.y * uDims.x + gid.y * uDims.x + gid.x;
+    vec3 world = uOrigin + vec3(gid) * uSpacing;
+
+    bool clipped = false;
+    for (int i = 0; i < 6; ++i) {
+        if (dot(uClipPlanes[i].xyz, world) + uClipPlanes[i].w > 0.0) {
+            clipped = true;
+            break;
+        }
+    }
+    if (clipped) {
+        return;
+    }
+
+    vec4 clip = uMVP * vec4(world, 1.0);
+    if (abs(clip.w) < 1e-7) {
+        return;
+    }
+
+    vec2 uv = (clip.xy / clip.w) * 0.5 + 0.5;
+
+    if (any(lessThan(uv, vec2(0.0))) || any(greaterThan(uv, vec2(1.0)))) {
+        if (uCutInside == 0) {
+            uVolume.data[voxelIndex] = uAirValue;
+        }
+        return;
+    }
+
+    ivec2 maskSize = textureSize(uMask, 0);
+    ivec2 maskCoord = ivec2(
+        int(uv.x * float(maskSize.x - 1)),
+        int((1.0 - uv.y) * float(maskSize.y - 1))
+    );
+    maskCoord = clamp(maskCoord, ivec2(0), maskSize - 1);
+    
+    float maskVal = texelFetch(uMask, maskCoord, 0).r;
+    bool inMask = (maskVal > 0.5);
+    
+    if ((uCutInside == 1) == inMask) {
+        uVolume.data[voxelIndex] = uAirValue;
+    }
+}

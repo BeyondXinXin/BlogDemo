@@ -35,6 +35,8 @@
 | 目录| 描述|
 | :------- |:-------------------------- |
 |Simple3DBrowser|一个简易的 OBJ 模型浏览器|
+|EarthVisualization|体绘制渲染地球|
+|ScalpelCutting|体绘制剪裁|
 
 ## Go
 | 目录| 描述|
